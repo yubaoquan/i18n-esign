@@ -4,6 +4,10 @@
   "description": "Combine I18n json files to single excel ",
   "version": "0.0.2",
   "publisher": "ybq",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yubaoquan/i18n-esign"
+  },
   "engines": {
     "vscode": "^1.44.0"
   },

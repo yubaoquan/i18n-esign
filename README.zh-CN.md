@@ -3,7 +3,7 @@
 简单的 VSCode 插件, 一看就会用
 
 <p align='center'>
-<a href="https://github.com/antfu/i18n-ally/blob/master/README.md">English</a> | 简体中文
+<a href="https://github.com/yubaoquan/i18n-esign/blob/master/README.md">English</a> | 简体中文
 </p>
 
 ## 功能
@@ -39,6 +39,10 @@
 第一版
 
 ### 0.0.2
+
+更新 readme
+
+### 0.0.3
 
 更新 readme
 

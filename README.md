@@ -3,7 +3,7 @@
 Simple VSCode extension, easy to use
 
 <p align='center'>
-English | <a href="https://github.com/antfu/i18n-ally/blob/master/README.zh-CN.md">简体中文</a>
+English | <a href="https://github.com/yubaoquan/i18n-esign/blob/master/README.zh-CN.md">简体中文</a>
 </p>
 
 ## Features
@@ -40,6 +40,10 @@ No
 init
 
 ### 0.0.2
+
+update readme
+
+### 0.0.3
 
 update readme
 
