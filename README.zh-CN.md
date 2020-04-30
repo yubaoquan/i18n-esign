@@ -1,6 +1,4 @@
-# i18n-esign README
-
-
+# i18n-esign
 
 简单的 VSCode 插件, 一看就会用
 
@@ -13,7 +11,13 @@
 用于合并多语言文件, 生成包含多个语言的 Excel 文件
 
 ![laa2.gif](https://i.loli.net/2020/04/30/kt1QnPuefgpKWAr.gif)
+
+源文件:
+
 ![src-code.png](https://i.loli.net/2020/04/30/RQK6PzqrG1DxBAV.png)
+
+合并结果:
+
 ![Excel.png](https://i.loli.net/2020/04/30/LDnbU3VsR1TaFHi.png)
 
 ## Requirements
@@ -30,10 +34,13 @@
 
 ## 更新记录
 
-### 1.0.0
+### 0.0.1
 
 第一版
 
+### 0.0.2
+
+更新 readme
 
 ### 更多信息
 
