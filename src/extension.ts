@@ -11,19 +11,19 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
-  console.log('Congratulations, your extension "laa" is now active!');
+  console.log('Congratulations, your extension "i18n-esign" is now active!');
 
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with registerCommand
   // The commandId parameter must match the command field in package.json
-  // let disposable = vscode.commands.registerCommand('laa.helloWorld', () => {
+  // let disposable = vscode.commands.registerCommand('i18n-esign.helloWorld', () => {
   //   // The code you place here will be executed every time your command is executed
 
   //   // Display a message box to the user
-  //   vscode.window.showInformationMessage('Hello World from Laa!---');
+  //   vscode.window.showInformationMessage('Hello World from i18n-esign!---');
   // });
 
-  let disposable2 = vscode.commands.registerCommand('laa.excel', (e) => {
+  let disposable2 = vscode.commands.registerCommand('i18n-esign.excel', (e) => {
     try {
       const jsonFileNames = fs.readdirSync(e.fsPath).filter(name => /.json$/.test(name));
 
@@ -61,7 +61,7 @@ export function activate(context: vscode.ExtensionContext) {
         return result;
       }, {});
 
-      // 用于生产 excel 的数组
+      // 用于生产 excel 的数组 [{ key: 'xxx', 'zh-CN': 'xxx', }]
       const excelArr = Object.entries(resultJson)
         .map(([key, langs]) => ({ key, ...langs as any }));
 

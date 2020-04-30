@@ -1,4 +1,4 @@
-# laa README
+# i18n-esign README
 
 简单的 VSCode 插件, 一看就会用
 
@@ -6,7 +6,7 @@
 
 用于合并多语言文件, 生成导入到 crm 的 Excel 文件
 
-![feature 1](images/laa.gif)
+![feature 1](images/i18n-esign.gif)
 
 ## Requirements
 

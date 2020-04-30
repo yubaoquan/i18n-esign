@@ -1,6 +1,6 @@
 {
-  "name": "laa",
-  "displayName": "Laa",
+  "name": "i18n-esign",
+  "displayName": "i18n-esign",
   "description": "Combine I18n json files to single excel ",
   "version": "0.0.1",
   "engines": {
@@ -10,13 +10,13 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:laa.excel"
+    "onCommand:i18n-esign.excel"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "laa.excel",
+        "command": "i18n-esign.excel",
         "title": "抽取Excel"
       }
     ],
@@ -24,7 +24,7 @@
       "explorer/context": [
         {
           "when": "explorerResourceIsFolder",
-          "command": "laa.excel",
+          "command": "i18n-esign.excel",
           "group": "7_modification"
         }
       ]
