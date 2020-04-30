@@ -1,0 +1,6 @@
+{
+  "extension.menu.btn": "抽取 Excel",
+  "file-not-found": "未找到语言文件, 请确认所选目录是否正确",
+  "success": "Excel 文件生成成功! 路径: ",
+  "fail": "Excel 生成失败, 请联系开发人员或打开 devTools 查看异常信息"
+}

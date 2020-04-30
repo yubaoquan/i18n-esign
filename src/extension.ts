@@ -4,24 +4,13 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as json2xls from 'json2xls';
+import { localeInit, localize } from './utils/locale';
+
+localeInit();
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
-  console.log('Congratulations, your extension "i18n-esign" is now active!');
-
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with registerCommand
-  // The commandId parameter must match the command field in package.json
-  // let disposable = vscode.commands.registerCommand('i18n-esign.helloWorld', () => {
-  //   // The code you place here will be executed every time your command is executed
-
-  //   // Display a message box to the user
-  //   vscode.window.showInformationMessage('Hello World from i18n-esign!---');
-  // });
 
   let disposable2 = vscode.commands.registerCommand('i18n-esign.excel', (e) => {
     try {
@@ -29,7 +18,8 @@ export function activate(context: vscode.ExtensionContext) {
 
       // 当前目录下没有找到 json 文件, 直接返回
       if (jsonFileNames.length === 0) {
-        vscode.window.showErrorMessage(`未找到语言文件, 请确认所选目录 ${e.fsPath} 是否正确`);
+        const message = localize('file-not-found', 'File not found, please check path');
+        vscode.window.showErrorMessage(`${message} ${e.fsPath}`);
         return;
       }
 
@@ -40,8 +30,6 @@ export function activate(context: vscode.ExtensionContext) {
         };
       });
 
-
-      //
       /**
        * 所有语言打进同一个 json, 格式如下
        * {
@@ -68,14 +56,15 @@ export function activate(context: vscode.ExtensionContext) {
       const excelPath = `${e.fsPath}.${Date.now()}.xlsx`;
       const xls = json2xls(excelArr);
       fs.writeFileSync(excelPath, xls, 'binary');
-      vscode.window.showInformationMessage(`Excel 文件生成成功! 路径: ${excelPath}`);
+      const message = localize('success', 'Excel file generate success! Path:');
+      vscode.window.showInformationMessage(`${message} ${excelPath}`);
     } catch (e) {
       console.error(e);
-      vscode.window.showErrorMessage(`Excel 生成失败, 请联系开发人员或打开 devTools 查看异常信息`);
+      const message = localize('fail', 'Fail to generate excel file, please open vscode devTools to checkout error messages');
+      vscode.window.showErrorMessage(message);
     }
   });
 
-  // context.subscriptions.push(disposable);
   context.subscriptions.push(disposable2);
 }
 

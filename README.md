@@ -11,7 +11,9 @@ English | <a href="https://github.com/antfu/i18n-ally/blob/master/README.zh-CN.m
 Combine all i18n language json files into one Excel file.
 
 
-![feature 1](images/i18n-esign.gif)
+![laa2.gif](https://i.loli.net/2020/04/30/kt1QnPuefgpKWAr.gif)
+![src-code.png](https://i.loli.net/2020/04/30/RQK6PzqrG1DxBAV.png)
+![Excel.png](https://i.loli.net/2020/04/30/LDnbU3VsR1TaFHi.png)
 
 ## Requirements
 

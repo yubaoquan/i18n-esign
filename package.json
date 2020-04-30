@@ -3,6 +3,7 @@
   "displayName": "i18n-esign",
   "description": "Combine I18n json files to single excel ",
   "version": "0.0.1",
+  "publisher": "ybq",
   "engines": {
     "vscode": "^1.44.0"
   },
@@ -17,7 +18,7 @@
     "commands": [
       {
         "command": "i18n-esign.excel",
-        "title": "抽取Excel"
+        "title": "%extension.menu.btn%"
       }
     ],
     "menus": {
@@ -50,5 +51,8 @@
     "mocha": "^7.1.1",
     "typescript": "^3.8.3",
     "vscode-test": "^1.3.0"
+  },
+  "dependencies": {
+    "json2xls": "^0.1.2"
   }
 }
