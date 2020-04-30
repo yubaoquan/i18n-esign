@@ -1,36 +1,38 @@
 # i18n-esign README
 
-简单的 VSCode 插件, 一看就会用
+Simple VSCode extension, easy to use
+
+<p align='center'>
+English | <a href="https://github.com/antfu/i18n-ally/blob/master/README.zh-CN.md">简体中文</a>
+</p>
 
 ## Features
 
-用于合并多语言文件, 生成导入到 crm 的 Excel 文件
+Combine all i18n language json files into one Excel file.
+
 
 ![feature 1](images/i18n-esign.gif)
 
 ## Requirements
 
-目前无要求
+No
 
 ## Extension Settings
 
-目前没有配置项
+No
 
 ## Known Issues
 
-目前没有
+No
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-第一版
+init
 
 
 ### For more information
 
-* 联系 @陈辅
 
 **Enjoy!**
