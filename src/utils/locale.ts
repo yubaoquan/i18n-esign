@@ -6,6 +6,9 @@ interface IMessage {
 
 const messages: IMessage = {};
 
+/**
+ * 初始化插件的多语言配置
+ */
 function localeInit() {
   const { locale } = JSON.parse(process.env.VSCODE_NLS_CONFIG as string);
   const filePath = path.resolve(__dirname, '../..', `package.nls.${locale}.json`);

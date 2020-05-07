@@ -15,10 +15,32 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:i18n-esign.excel"
+    "onCommand:i18n-esign.excel",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact",
+    "onLanguage:javascript",
+    "onLanguage:html",
+    "onLanguage:vue"
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "i18n-esign",
+      "properties": {
+        "i18n-esign.enableLinter": {
+          "type": "boolean",
+          "default": true,
+          "description": "Mark string literals in editor so you can quickly spot on them"
+        },
+        "i18n-esign.markColor": {
+          "type": "string",
+          "default": "red",
+          "description": "The color of matched non-English letters"
+        }
+      }
+    },
     "commands": [
       {
         "command": "i18n-esign.excel",
@@ -57,6 +79,15 @@
     "vscode-test": "^1.3.0"
   },
   "dependencies": {
-    "json2xls": "^0.1.2"
+    "@angular/compiler": "^9.1.4",
+    "@babel/core": "^7.9.6",
+    "@types/babel__core": "^7.1.7",
+    "@types/fs-extra": "^8.1.0",
+    "@types/lodash": "^4.14.150",
+    "fs-extra": "^9.0.0",
+    "globby": "^11.0.0",
+    "json2xls": "^0.1.2",
+    "lodash": "^4.17.15",
+    "vue-template-compiler": "^2.6.11"
   }
 }

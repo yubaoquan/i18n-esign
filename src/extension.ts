@@ -5,13 +5,17 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as json2xls from 'json2xls';
 import { localeInit, localize } from './utils/locale';
+import { triggerUpdateDecorations } from './chineseCharDecorations';
+import { TargetStr } from './define';
+import { getConfiguration } from './utils';
 
 localeInit();
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-
+/**
+ * 注册 Excel 的功能
+ * @param context
+ */
+function registerExcelCmd(context: vscode.ExtensionContext) {
   let disposable2 = vscode.commands.registerCommand('i18n-esign.excel', (e) => {
     try {
       const jsonFileNames = fs.readdirSync(e.fsPath).filter(name => /.json$/.test(name));
@@ -66,6 +70,49 @@ export function activate(context: vscode.ExtensionContext) {
   });
 
   context.subscriptions.push(disposable2);
+}
+
+/**
+ * 注册中文标红框功能
+ */
+function registerLinter(context: vscode.ExtensionContext) {
+  let targetStrs: TargetStr[] = [];
+
+  let activeEditor = vscode.window.activeTextEditor;
+  if (activeEditor) {
+    triggerUpdateDecorations((newTargetStrs: TargetStr[]) => {
+      targetStrs = newTargetStrs;
+    });
+  }
+
+  // 当 切换文档 的时候重新检测当前文档中的中文文案
+  const dispose1 = vscode.window.onDidChangeActiveTextEditor(editor => {
+    activeEditor = editor;
+    if (editor) {
+      triggerUpdateDecorations((newTargetStrs: TargetStr[]) => {
+        targetStrs = newTargetStrs;
+      });
+    }
+  }, null);
+
+  // 当 文档发生变化时 的时候重新检测当前文档中的中文文案
+  const dispose2 = vscode.workspace.onDidChangeTextDocument(event => {
+    if (activeEditor && event.document === activeEditor.document) {
+      triggerUpdateDecorations((newTargetStrs: TargetStr[]) => {
+        targetStrs = newTargetStrs;
+      });
+    }
+  }, null);
+
+  context.subscriptions.push(dispose1, dispose2);
+}
+
+// this method is called when your extension is activated
+// your extension is activated the very first time the command is executed
+export function activate(context: vscode.ExtensionContext) {
+  const enableLinterFeature = getConfiguration('enableLinter');
+  registerExcelCmd(context);
+  if (enableLinterFeature) registerLinter(context);
 }
 
 // this method is called when your extension is deactivated

@@ -47,6 +47,10 @@ update readme
 
 update readme
 
+### 0.1.0
+
+Add linter feature. Chinese characters will be marked a red border.
+Code copied from [kiwi-linter](https://github.com/alibaba/kiwi/tree/master/kiwi-linter)
 
 ### For more information
 
