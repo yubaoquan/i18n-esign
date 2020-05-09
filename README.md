@@ -55,6 +55,9 @@ Code copied from [kiwi-linter](https://github.com/alibaba/kiwi/tree/master/kiwi-
 ### 0.1.1
 Add missing dependency: typescript
 
+### 0.1.2
+Move typescript from devDependency to dependency
+
 ### For more information
 
 

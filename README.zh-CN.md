@@ -54,6 +54,9 @@
 ### 0.1.1
 添加 ts 依赖
 
+### 0.1.2
+将 ts 从 devDependency 移动到 dependency
+
 ### 更多信息
 
 
