@@ -51,6 +51,9 @@
 添加高亮功能. 中文将被红框标出, 便于查看未翻译的地方.
 代码来源: [kiwi-linter](https://github.com/alibaba/kiwi/tree/master/kiwi-linter)
 
+### 0.1.1
+添加 ts 依赖
+
 ### 更多信息
 
 
