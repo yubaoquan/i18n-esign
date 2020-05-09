@@ -58,6 +58,9 @@ Add missing dependency: typescript
 ### 0.1.2
 Move typescript from devDependency to dependency
 
+### 0.1.3
+Add missing dependency
+
 ### For more information
 
 
