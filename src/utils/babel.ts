@@ -1,5 +1,5 @@
 import * as babel from '@babel/core';
-import { DOUBLE_BYTE_REGEX } from '../const';
+import { DOUBLE_BYTE_REGEX } from '../linter/const';
 import * as ts from 'typescript';
 
 function transerI18n(code: string, filename: string, lang?: string) {

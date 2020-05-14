@@ -3,7 +3,7 @@
  * @desc 获取语言文件
  */
 import * as vscode from 'vscode';
-import { flatten, getLangJson } from './utils';
+import { flatten, getLangJson } from '../utils';
 import * as globby from 'globby';
 import * as fs from 'fs';
 import { I18N_GLOB } from './const';

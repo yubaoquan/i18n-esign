@@ -8,7 +8,9 @@
 
 ## 功能
 
-用于合并多语言文件, 生成包含多个语言的 Excel 文件
+1. 用于合并多个 json 语言文件, 生成包含多个语言的 Excel 文件;
+2. 根据 Excel 文件, 更新 json 语言文件;
+3. 中文标红;
 
 ![laa2.gif](https://i.loli.net/2020/04/30/kt1QnPuefgpKWAr.gif)
 
@@ -26,7 +28,9 @@
 
 ## 配置项
 
-目前没有配置项
+- languageTypes: 默认值`["zh-CN", "en-US"]`. 插件将抽取所有以这种标识命名的 json 文件(如en-US.json, zh-CN.json)然后生成 Excel, 这些语言标识也会作为 Excel 中的列名.
+- enableLinter: 将非英文字符高亮框出来, 便于查看.
+- markColor: 非英文字符的高亮颜色.
 
 ## 已知问题
 
@@ -49,7 +53,7 @@
 ### 0.1.0
 
 添加高亮功能. 中文将被红框标出, 便于查看未翻译的地方.
-代码来源: [kiwi-linter](https://github.com/alibaba/kiwi/tree/master/kiwi-linter)
+部分代码来自 [kiwi-linter](https://github.com/alibaba/kiwi/tree/master/kiwi-linter)
 
 ### 0.1.1
 添加 ts 依赖
@@ -60,8 +64,12 @@
 ### 0.1.3
 添加依赖
 
-### 更多信息
+### 0.2.0
+新功能:
 
+  1. 支持多级目录探测 json 语言文件;
+  2. 根据 Excel 文件内容反向更新 json 语言文件;
 
+部分代码来自 [vscode-advanced-new-file](https://github.com/patbenatar/vscode-advanced-new-file)
 
 **Enjoy!**

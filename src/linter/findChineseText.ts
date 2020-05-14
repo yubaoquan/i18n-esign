@@ -6,9 +6,9 @@ import * as ts from 'typescript';
 import * as vscode from 'vscode';
 import * as compiler from '@angular/compiler';
 import { DOUBLE_BYTE_REGEX } from './const';
-import { trimWhiteSpace } from './utils/parser';
-import { removeFileComment } from './utils/ast';
-import { transerI18n,findVueText } from './utils/babel';
+import { trimWhiteSpace } from '../utils/parser';
+import { removeFileComment } from '../utils/ast';
+import { transerI18n,findVueText } from '../utils/babel';
 import * as compilerVue from 'vue-template-compiler';
 /**
  * 查找 Ts 文件中的中文

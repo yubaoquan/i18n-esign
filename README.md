@@ -8,7 +8,9 @@ English | <a href="https://github.com/yubaoquan/i18n-esign/blob/master/README.zh
 
 ## Features
 
-Combine all i18n language json files into one Excel file.
+1. Combine all i18n language json files into one Excel file.
+2. Update json file from excel file.
+3. Highlight Chinese characters.
 
 
 ![laa2.gif](https://i.loli.net/2020/04/30/kt1QnPuefgpKWAr.gif)
@@ -27,7 +29,9 @@ No
 
 ## Extension Settings
 
-No
+- languageTypes: Extension will find json files with these names (en-US.json, zh-CN.json), and generate Excel with columns named by this names.
+- enableLinter: Mark string literals in editor so you can quickly spot on them.
+- markColor: The color of matched non-English letters.
 
 ## Known Issues
 
@@ -50,7 +54,7 @@ update readme
 ### 0.1.0
 
 Add linter feature. Chinese characters will be marked a red border.
-Code copied from [kiwi-linter](https://github.com/alibaba/kiwi/tree/master/kiwi-linter)
+Some code copy from [kiwi-linter](https://github.com/alibaba/kiwi/tree/master/kiwi-linter)
 
 ### 0.1.1
 Add missing dependency: typescript
@@ -61,7 +65,12 @@ Move typescript from devDependency to dependency
 ### 0.1.3
 Add missing dependency
 
-### For more information
+### 0.2.0
+Add new feature:
 
+  1. support recursive find json in directory to generate excel;
+  2. update json files from excel;
+
+Some code copy from [vscode-advanced-new-file](https://github.com/patbenatar/vscode-advanced-new-file)
 
 **Enjoy!**

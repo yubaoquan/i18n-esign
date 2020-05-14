@@ -6,7 +6,7 @@ import * as vscode from 'vscode';
 import { setLineDecorations } from './lineAnnotation';
 import { findChineseText } from './findChineseText';
 import * as minimatch from 'minimatch';
-import { getConfiguration } from './utils';
+import { getConfiguration } from '../utils';
 
 /**
  * 中文的标记，红框样式

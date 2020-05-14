@@ -1,6 +1,16 @@
 {
   "extension.menu.btn": "抽取 Excel",
+  "extension.menu.updateByExcel": "从 Excel 导入语言",
+
   "file-not-found": "未找到语言文件, 请确认所选目录是否正确",
   "success": "Excel 文件生成成功! 路径: ",
-  "fail": "Excel 生成失败, 请联系开发人员或打开 devTools 查看异常信息"
+  "fail": "Excel 生成失败, 请联系开发人员或打开 devTools 查看异常信息",
+  "language-types-not-found": "languageTypes 未配置, 请检查 vscode 配置项",
+  "go-to-config": "打开设置面板",
+  "json-update-success": "语言文案更新成功",
+  "json-update-fail": "更新失败, 请打开 devTools 检查报错信息",
+
+  "extension.desc.languageTypes": "插件用来识别语言文件的标识, 插件只检测文件名为这种标识的 json 文件(en-US.json, zh-CN.json). 抽取出的 Excel 文件的语言列也以这些标识命名",
+  "extension.desc.enableLinter": "将非英文字符高亮框出来, 便于查看",
+  "extension.desc.markColor": "非英文字符的高亮颜色"
 }

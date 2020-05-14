@@ -1,3 +1,8 @@
 {
-  "extension.menu.btn": "Generate Excel"
+  "extension.menu.btn": "Generate Excel",
+  "extension.menu.updateByExcel": "Import i18n from excel",
+
+  "extension.desc.languageTypes": "Extension will find json files with these names (en-US.json, zh-CN.json), and generate Excel with columns named by this names.",
+  "extension.desc.enableLinter": "Mark string literals in editor so you can quickly spot on them",
+  "extension.desc.markColor": "The color of matched non-English letters"
 }

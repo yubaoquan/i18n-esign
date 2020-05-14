@@ -4,7 +4,7 @@
  */
 import * as vscode from 'vscode';
 import * as fs from 'fs-extra';
-import { getAllFiles, getConfiguration } from './utils/index';
+import { getAllFiles, getConfiguration } from '../utils/index';
 
 /**
  * 适配不同的语言文件夹位置
