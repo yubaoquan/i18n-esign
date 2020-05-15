@@ -76,4 +76,7 @@ Some code copy from [vscode-advanced-new-file](https://github.com/patbenatar/vsc
 ### 0.2.1
 Fix bug of not showing red border on Chinese characters.
 
+### 0.2.2
+Fix bug of parsing invalid json content in json file.
+
 **Enjoy!**

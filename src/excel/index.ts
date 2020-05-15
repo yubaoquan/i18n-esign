@@ -59,6 +59,20 @@ function getLanguageFiles(ePath: string): ILanguageFile[] {
 }
 
 /**
+ * 读取 json 文件中的对象, 如果 json 格式不合法, 返回空对象
+ * @param filePath
+ */
+function getJsonFromFile(filePath: string) {
+  try {
+    return require(filePath);
+  } catch (e) {
+    console.error(e);
+    console.warn(`Fail to require ${filePath}`);
+    return {};
+  }
+}
+
+/**
  * 读取多个 json 文件合并成一个 json 对象
  * {
  *   "xxx": {
@@ -69,7 +83,7 @@ function getLanguageFiles(ePath: string): ILanguageFile[] {
  */
 function combineJson(files: ILanguageFile[]) {
   return files.reduce((result: any, file) => {
-    const json = require(file.path);
+    const json = getJsonFromFile(file.path);
     Object.entries(json).forEach(([key, value]) => {
       result[key] = result[key] || {};
       result[key][file.name] = value;
@@ -211,7 +225,7 @@ function recursiveUpdateJson(folderPath: string, allJson: any): void {
   }
 
   files.forEach(file => {
-    const json = require(file.path);
+    const json = getJsonFromFile(file.path);
     const language = file.name;
     Object.keys(json).forEach(key => {
       const oldValue = json[key];
