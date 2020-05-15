@@ -3,7 +3,6 @@
  * @desc 查找代码中的中文, 并标记
  */
 import * as vscode from 'vscode';
-import { setLineDecorations } from './lineAnnotation';
 import { findChineseText } from './findChineseText';
 import * as minimatch from 'minimatch';
 import { getConfiguration } from '../utils';
@@ -91,8 +90,6 @@ export function updateDecorations() {
   const shouldMark = getConfiguration('markStringLiterals');
   if (shouldMark !== true) return;
 
-  /** 设置 I18N 的提示 */
-  setLineDecorations(activeEditor);
   /** 设置中文的提示 */
   activeEditor.setDecorations(chineseCharDecoration, chineseChars);
 

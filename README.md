@@ -73,4 +73,7 @@ Add new feature:
 
 Some code copy from [vscode-advanced-new-file](https://github.com/patbenatar/vscode-advanced-new-file)
 
+### 0.2.1
+Fix bug of not showing red border on Chinese characters.
+
 **Enjoy!**

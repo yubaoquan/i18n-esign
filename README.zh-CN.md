@@ -72,4 +72,7 @@
 
 部分代码来自 [vscode-advanced-new-file](https://github.com/patbenatar/vscode-advanced-new-file)
 
+### 0.2.1
+修复中文红框不显示的bug.
+
 **Enjoy!**
