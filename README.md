@@ -83,7 +83,10 @@ Fix bug of parsing invalid json content in json file.
 Fix bug of not founding new added text when generating excel after json file changed;
 Change excel file name format;
 
-### 3.0.1
+### 0.3.1
 Exclude node_modules
+
+### 0.3.2
+Bunding extension with webpack
 
 **Enjoy!**
