@@ -89,4 +89,7 @@ Exclude node_modules
 ### 0.3.2
 Bunding extension with webpack
 
+### 0.3.3
+Optimize code
+
 **Enjoy!**

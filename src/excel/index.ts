@@ -202,10 +202,12 @@ async function handleUpdateByExcelCmd(e: any, context: vscode.ExtensionContext) 
 
     const languageAbsoluteDir = languageDir.fsLocation.absolute;
     console.info(languageAbsoluteDir);
-    recursiveUpdateJson(languageAbsoluteDir, json);
+    const success = recursiveUpdateJson(languageAbsoluteDir, json);
 
-    const message = localize('json-update-success', 'Update success');
-    vscode.window.showInformationMessage(message);
+    if (success) {
+      const message = localize('json-update-success', 'Update success');
+      vscode.window.showInformationMessage(message);
+    }
   } catch (e) {
     console.error(e);
     const message = localize('json-update-fail', 'Update fail, please check error logs in devTools');
@@ -218,13 +220,13 @@ async function handleUpdateByExcelCmd(e: any, context: vscode.ExtensionContext) 
  * @param folderPath 目录路径
  * @param allJson excel 文件中解析出的 json
  */
-function recursiveUpdateJson(folderPath: string, allJson: any): void {
+function recursiveUpdateJson(folderPath: string, allJson: any): boolean {
   const files = getLanguageFiles(folderPath);
   // 当前目录下没有找到 json 文件, 直接返回
   if (files.length === 0) {
     const message = localize('file-not-found', 'File not found, please check path');
     vscode.window.showErrorMessage(`${message} ${folderPath}`);
-    return;
+    return false;
   }
 
   files.forEach(file => {
@@ -239,6 +241,8 @@ function recursiveUpdateJson(folderPath: string, allJson: any): void {
     const jsonText = JSON.stringify(json, null, 2);
     fs.writeFileSync(file.path, jsonText);
   });
+
+  return true;
 }
 
 /**
