@@ -7,6 +7,7 @@ import { getConfiguration } from '../utils';
 const { readDirDeepSync } = require('read-dir-deep');
 const excelToJson = require('convert-excel-to-json');
 import { selectFile, selectFolder } from '../utils/quick-pick';
+import * as dayjs from 'dayjs';
 
 interface ILanguageFile {
   name: string,
@@ -64,6 +65,7 @@ function getLanguageFiles(ePath: string): ILanguageFile[] {
  */
 function getJsonFromFile(filePath: string) {
   try {
+    delete require.cache[filePath];
     return require(filePath);
   } catch (e) {
     console.error(e);
@@ -101,7 +103,8 @@ function generateExcel(resultJson: any, ePath: string) {
   const excelArr = Object.entries(resultJson)
     .map(([key, langs]) => ({ key, ...langs as any }));
 
-  const excelPath = `${ePath}.${Date.now()}.xlsx`;
+  const timeStr = dayjs().format('YYYY-MM-DD_HH.mm.ss');
+  const excelPath = `${ePath}.${timeStr}--${Date.now()}.xlsx`;
   const xls = json2xls(excelArr);
   fs.writeFileSync(excelPath, xls, 'binary');
   const message = localize('success', 'Excel file generate success! Path:');
@@ -157,8 +160,8 @@ function convertExcelToJson(excelPath: string): void {
   */
   const result: any = {};
   json
-  .slice(1)
-  .map((row: any) => {
+    .slice(1)
+    .map((row: any) => {
       // 用第一行的 value 作为数组每个 item 的 key
       return Object.entries(titleRow).reduce((temp: any, [columnID, title]) => {
         temp[title as string] = row[columnID];

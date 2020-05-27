@@ -79,4 +79,8 @@ Fix bug of not showing red border on Chinese characters.
 ### 0.2.2
 Fix bug of parsing invalid json content in json file.
 
+### 0.3.0
+Fix bug of not founding new added text when generating excel after json file changed;
+Change excel file name format;
+
 **Enjoy!**
