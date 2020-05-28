@@ -2,7 +2,7 @@
   "name": "i18n-esign",
   "displayName": "i18n-esign",
   "description": "Combine I18n json files to single excel ",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "publisher": "ybq",
   "repository": {
     "type": "git",
