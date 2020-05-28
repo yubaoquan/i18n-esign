@@ -92,4 +92,7 @@ Bunding extension with webpack
 ### 0.3.3
 Optimize code
 
+### 3.0.4
+debug
+
 **Enjoy!**

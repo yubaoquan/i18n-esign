@@ -106,6 +106,7 @@ function generateExcel(resultJson: any, ePath: string) {
   const timeStr = dayjs().format('YYYY-MM-DD_HH.mm.ss');
   const excelPath = `${ePath}.${timeStr}--${Date.now()}.xlsx`;
   const xls = json2xls(excelArr);
+  console.info(resultJson, excelArr);
   fs.writeFileSync(excelPath, xls, 'binary');
   const message = localize('success', 'Excel file generate success! Path:');
   vscode.window.showInformationMessage(`${message} ${excelPath}`);
