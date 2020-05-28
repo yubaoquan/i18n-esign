@@ -65,8 +65,8 @@ function getLanguageFiles(ePath: string): ILanguageFile[] {
  */
 function getJsonFromFile(filePath: string) {
   try {
-    delete require.cache[filePath];
-    return require(filePath);
+    const content: string = fs.readFileSync(filePath).toString();
+    return JSON.parse(content);
   } catch (e) {
     console.error(e);
     console.warn(`Fail to require ${filePath}`);

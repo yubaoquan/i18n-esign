@@ -92,7 +92,10 @@ Bunding extension with webpack
 ### 0.3.3
 Optimize code
 
-### 3.0.4
+### 0.3.4
 debug
+
+### 0.3.5
+Fix excel generating bug
 
 **Enjoy!**
