@@ -112,7 +112,7 @@
     "fs-extra": "^9.0.0",
     "gitignore-to-glob": "^0.3.0",
     "json2xls": "^0.1.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "read-dir-deep": "^7.0.1",
     "typescript": "^3.8.3",
     "vscode-cache": "^0.3.0",
